@@ -11,7 +11,7 @@
 #### 使用例子
 
 ~~~~
-ParallelTaskExecuteServiceFactory
+List<BaseParallelResponse> responseList = ParallelTaskExecuteServiceFactory
   .getSimpleParallelTaskExecuteServiceInstance()
     .executeParallelTask(
          new BaseParallelRequest(),
