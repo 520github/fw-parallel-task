@@ -31,14 +31,14 @@ public class ApplicationContextParallelTaskChain implements IBaseParallelTaskCha
         taskMap.values().forEach(iBaseParallelTask -> {
             taskMap.put(iBaseParallelTask.getParallelTaskKey().getKey(), iBaseParallelTask);
         });
-        // 用lamb表达式看看是否能实现
+
         List<IBaseParallelTask> resultList = new ArrayList<>();
-        for (ParallelTaskKey taskKey : keys) {
+        keys.forEach(taskKey -> {
             if (taskKey == null || taskKey.getKey() == null) {
-                continue;
+                return;
             }
             resultList.add(taskMap.get(taskKey.getKey()));
-        }
+        });
         return resultList;
     }
 }
