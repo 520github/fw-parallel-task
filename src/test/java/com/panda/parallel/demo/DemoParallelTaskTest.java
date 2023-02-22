@@ -61,6 +61,8 @@ public class DemoParallelTaskTest {
         print(responseAggregate.bizFailNum());
         print(responseAggregate.bizSuccessNum());
         print(responseAggregate.exceptionNum());
+        print(responseAggregate.retryTaskNum());
+        print(responseAggregate.retryTaskTotalNum());
     }
 
     /**

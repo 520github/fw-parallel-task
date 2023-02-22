@@ -34,4 +34,13 @@ public class BaseParallelResponseAggregate {
     public long exceptionNum() {
         return responseList.stream().filter(response -> response.getException() != null).count();
     }
+
+    public long retryTaskNum() {
+        return responseList.stream().filter(response -> response.getRetryNum() > 0).count();
+    }
+
+    public long retryTaskTotalNum() {
+        return responseList.stream().filter(response -> response.getRetryNum() > 0).mapToLong(res -> res.getRetryNum())
+                .sum();
+    }
 }
