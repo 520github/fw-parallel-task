@@ -37,3 +37,4 @@ bin
 .DS_Store
 log-gather-sdk
 classes
+target
