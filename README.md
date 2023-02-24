@@ -20,4 +20,4 @@ List<BaseParallelResponse> responseList = ParallelTaskExecuteServiceFactory
 ~~~~
 
 具体参考单元测试类
-com.panda.parallel.demo.DemoParallelTaskTest
+demo.org.sunso.parallel.DemoParallelTaskTest
