@@ -1,6 +1,5 @@
 package org.sunso.parallel.demo;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.sunso.parallel.bootstrap.FailRetryParallelTaskBootstrap;
 import org.sunso.parallel.demo.key.DemoParallelTaskKey;

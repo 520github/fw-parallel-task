@@ -7,9 +7,7 @@ import org.sunso.parallel.key.ParallelTaskKey;
 import org.sunso.parallel.parameter.BaseParallelRequest;
 import org.sunso.parallel.parameter.BaseParallelResponse;
 import org.sunso.parallel.task.IBaseParallelTask;
-import org.springframework.stereotype.Component;
 
-@Component
 public class DemoEmptyParallelTask implements IBaseParallelTask<DemoBizParameter> {
     @Override
     public ParallelTaskKey getParallelTaskKey() {

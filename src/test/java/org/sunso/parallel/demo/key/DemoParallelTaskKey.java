@@ -7,8 +7,9 @@ import org.sunso.parallel.key.ParallelTaskKey;
 import org.sunso.parallel.task.IBaseParallelTask;
 
 public enum DemoParallelTaskKey implements ParallelTaskKey {
-    DemoEmptyTask("demoEmptyTask", new DemoEmptyParallelTask()), DemoSleepTask("demoSleepTask",
-            new DemoSleepParallelTask()), DemoBizFailTask("demoBizFailTask", new DemoBizFailParallelTask()),;
+    DemoEmptyTask("demoEmptyTask", new DemoEmptyParallelTask()),
+    DemoSleepTask("demoSleepTask", new DemoSleepParallelTask()),
+    DemoBizFailTask("demoBizFailTask", new DemoBizFailParallelTask()),;
 
     private String key;
     private IBaseParallelTask iBaseParallelTask;
