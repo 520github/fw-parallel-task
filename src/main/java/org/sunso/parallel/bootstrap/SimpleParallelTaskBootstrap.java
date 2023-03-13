@@ -5,6 +5,7 @@ import org.sunso.parallel.ParallelTaskExecuteServiceI;
 import org.sunso.parallel.key.ParallelTaskKey;
 import org.sunso.parallel.parameter.BaseParallelRequest;
 import org.sunso.parallel.parameter.BaseParallelResponse;
+import org.sunso.parallel.task.IBaseParallelTask;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -81,23 +82,32 @@ public class SimpleParallelTaskBootstrap {
     }
 
     /**
-     * 并发执行任务
+     * 根据任务key,并发执行任务
      * 
      * @param parallelTaskKeys
      * @return
      */
-    public List<BaseParallelResponse> executeParallelTask(ParallelTaskKey... parallelTaskKeys) {
+    public List<BaseParallelResponse> executeParallelTaskKey(ParallelTaskKey... parallelTaskKeys) {
         return getParallelTaskExecuteServiceI().executeParallelTask(request, parallelTaskKeys);
     }
 
     /**
-     * 并发执行任务
+     * 根据任务key,并发执行任务
      * 
      * @param parallelTaskKeyList
      * @return
      */
-    public List<BaseParallelResponse> executeParallelTask(List<ParallelTaskKey> parallelTaskKeyList) {
+    public List<BaseParallelResponse> executeParallelTaskKey(List<ParallelTaskKey> parallelTaskKeyList) {
         return getParallelTaskExecuteServiceI().executeParallelTask(request, parallelTaskKeyList);
+    }
+
+    /**
+     * 根据任务,并发执行任务
+     * @param parallelTaskList
+     * @return
+     */
+    public List<BaseParallelResponse> executeParallelTask(List<IBaseParallelTask> parallelTaskList) {
+        return getParallelTaskExecuteServiceI().executeParallelTask(parallelTaskList, request);
     }
 
     /**

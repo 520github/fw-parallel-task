@@ -3,6 +3,7 @@ package org.sunso.parallel;
 import org.sunso.parallel.key.ParallelTaskKey;
 import org.sunso.parallel.parameter.BaseParallelRequest;
 import org.sunso.parallel.parameter.BaseParallelResponse;
+import org.sunso.parallel.task.IBaseParallelTask;
 
 import java.util.List;
 
@@ -29,4 +30,14 @@ public interface ParallelTaskExecuteServiceI {
      */
     List<BaseParallelResponse> executeParallelTask(BaseParallelRequest request,
             List<ParallelTaskKey> parallelTaskKeyList);
+
+    /**
+     * 并发执行指定任务列表并返回结果
+     *
+     * @param request
+     * @param parallelTaskList
+     * @return
+     */
+    List<BaseParallelResponse> executeParallelTask(List<IBaseParallelTask> parallelTaskList,
+          BaseParallelRequest request);
 }

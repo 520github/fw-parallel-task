@@ -44,6 +44,10 @@ public abstract class AbstractParallelTaskExecuteService implements ParallelTask
     private List<BaseParallelResponse> executeParallelTask(BaseParallelRequest request,
             List<ParallelTaskKey> taskKeyList, IBaseParallelTaskChain taskChain) {
         List<IBaseParallelTask> parallelTaskList = taskChain.getParallelTaskList(taskKeyList);
+        return executeParallelTask(parallelTaskList, request);
+    }
+
+    public List<BaseParallelResponse> executeParallelTask(List<IBaseParallelTask> parallelTaskList, BaseParallelRequest request) {
         CompletionService completionService = getCompletionService(getExecutorService(request));
         parallelTaskList.forEach(parallelTask -> {
             submitTask(completionService, parallelTask, request);

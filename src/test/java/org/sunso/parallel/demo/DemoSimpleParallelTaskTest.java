@@ -23,7 +23,7 @@ public class DemoSimpleParallelTaskTest extends AbstractParallelTaskTest {
                 .setPoolTaskResultTimeout(100)
                 .setTimeUnit(TimeUnit.MILLISECONDS)
                 .setBizRequest(DemoBizParameter.newInstance().setRequest("demo"))
-                .executeParallelTask(parallelTaskKeyList);
+                .executeParallelTaskKey(parallelTaskKeyList);
 
         // 验证结果
         checkReponseList(responseList, parallelTaskKeyList);
